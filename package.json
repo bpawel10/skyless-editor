@@ -2,11 +2,9 @@
   "name": "skyless-editor",
   "version": "0.0.0",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "tauri": "tauri"
+    "wasm-pack": "cd src-wasm && wasm-pack build --target web && cd ..",
+    "dev": "npm run wasm-pack && vite",
+    "clean": "rm -rf target src-tauri/target src-wasm/target"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",
