@@ -2169,6 +2169,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7bd3e3206899af3f8b12af284fafc038cc1dc2b41d1b89dd17297221c5d225de"
 
 [[package]]
+name = "skyless-editor-model"
+version = "0.0.0"
+
+[[package]]
 name = "skyless-editor-tauri"
 version = "0.0.0"
 dependencies = [
@@ -2177,6 +2181,10 @@ dependencies = [
  "tauri",
  "tauri-build",
 ]
+
+[[package]]
+name = "skyless-editor-transport"
+version = "0.0.0"
 
 [[package]]
 name = "skyless-editor-wasm"
