@@ -3,4 +3,10 @@ name = "skyless-editor-model"
 version = "0.0.0"
 edition = "2021"
 
+[lib]
+crate-type = ["rlib", "cdylib"]
+
 [dependencies]
+rkyv = "0.7.41"
+strum = { version = "0.24.1", features = ["derive"] }
+wasm-bindgen = { version = "0.2.84" }
