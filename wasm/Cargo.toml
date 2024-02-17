@@ -4,18 +4,39 @@ version = "0.0.0"
 edition = "2021"
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["rlib", "cdylib"]
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+debug = 0
+strip = "symbols"
+debug-assertions = false
+panic = "abort"
+codegen-units = 1
+lto = true
+
+[profile.dev]
+opt-level = 0
+panic = 'abort'
 
 [dependencies]
-wasm-bindgen = "0.2.84"
+model = { package = "skyless-editor-model", path = "../model" }
+transport = { package = "skyless-editor-transport", path = "../transport" }
+
+console_error_panic_hook = "0.1.7"
+futures = "0.3.30"
+getrandom = { version = "0.2.12", features = ["js"] }
+itertools = "0.12.1"
+js-sys = "0.3.68"
+rkyv = "0.7.44"
+serde = { version = "1.0.196", features = ["derive"] }
+serde-wasm-bindgen = "0.6.3"
+tokio = { version = "1.36.0", features = ["sync"] }
+wasm-bindgen = { version = "0.2.91", features = ["serde-serialize"] }
+wasm-bindgen-futures = "0.4.41"
+
 
 [dependencies.web-sys]
-version = "0.3.61"
-features = [
-  'CanvasRenderingContext2d',
-  'Document',
-  'Element',
-  'HtmlCanvasElement',
-  'Window',
-  'console',
-]
+version = "0.3.68"
+features = ['BinaryType', 'MessageEvent', 'WebSocket']
