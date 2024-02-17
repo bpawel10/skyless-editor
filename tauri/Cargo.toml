@@ -4,12 +4,26 @@ version = "0.0.0"
 edition = "2021"
 
 [build-dependencies]
-tauri-build = { version = "1.2.1", features = [] }
+tauri-build = { version = "1.5.1" }
 
 [dependencies]
-tauri = { version = "1.2.4", features = ["shell-open"] }
-serde = { version = "1.0.158", features = ["derive"] }
-serde_json = "1.0.94"
+model = { package = "skyless-editor-model", path = "../model" }
+transport = { package = "skyless-editor-transport", path = "../transport" }
 
-[features]
-custom-protocol = ["tauri/custom-protocol"]
+async-trait = "0.1.77"
+base64 = "0.21.7"
+bytes = "1.5.0"
+futures = "0.3.30"
+hashbrown = { version = "0.14.3", features = ["rayon"] }
+image = "0.24.8"
+itertools = "0.12.1"
+js-sys = "0.3.68"
+num_enum = "0.7.2"
+percent-encoding = "2.3.1"
+rayon = "1.8.1"
+rkyv = "0.7.44"
+serde = { version = "1.0.196", features = ["derive"] }
+tauri = { version = "1.5.4", features = ["shell-open"] }
+tokio = { version = "1.36.0", features = ["macros"] }
+tokio-tungstenite = "0.21.0"
+tungstenite = "0.21.0"
