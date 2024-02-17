@@ -3,4 +3,13 @@ name = "skyless-editor-transport"
 version = "0.0.0"
 edition = "2021"
 
+[lib]
+crate-type = ["rlib", "cdylib"]
+
 [dependencies]
+model = { package = "skyless-editor-model", path = "../model" }
+
+async-trait = "0.1.68"
+futures = "0.3.28"
+rkyv = "0.7.41"
+tungstenite = "0.18.0"
