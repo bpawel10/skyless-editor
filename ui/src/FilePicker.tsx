@@ -1,6 +1,6 @@
 import { Component, createSignal, JSXElement, Show } from 'solid-js';
 import { children as childrenHelper } from 'solid-js';
-import { open } from '@tauri-apps/api/dialog';
+import { open } from '@tauri-apps/plugin-dialog';
 
 interface FilePickerProps {
   children: JSXElement;

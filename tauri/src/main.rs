@@ -53,6 +53,7 @@ async fn load(app: AppHandle, project: TfsProject) -> Result<(), Error> {
 
 fn main() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_dialog::init())
         .plugin(WebSocket::init())
         .invoke_handler(tauri::generate_handler![get_websocket_url, detect, load,])
         .run(tauri::generate_context!())

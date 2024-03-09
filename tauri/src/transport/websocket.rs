@@ -34,7 +34,7 @@ pub struct WebSocket {
 impl WebSocket {
     pub fn init<R: Runtime>() -> TauriPlugin<R> {
         Builder::new("websocket")
-            .setup(|app| {
+            .setup(|app, _| {
                 let app = app.clone();
                 tauri::async_runtime::spawn(async move {
                     let listener = TcpListener::bind(SocketAddrV4::new(Ipv4Addr::LOCALHOST, 0))

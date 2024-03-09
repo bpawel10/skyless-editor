@@ -1,4 +1,4 @@
-import { invoke } from '@tauri-apps/api';
+import { invoke } from '@tauri-apps/api/core';
 import { createResource, createSignal, Show } from 'solid-js';
 import { ProgressBar } from './ProgressBar';
 import { Project } from './project/Project';
